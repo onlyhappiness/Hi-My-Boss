@@ -34,11 +34,18 @@
 const Home = () => {
   return (
     <div
-      className='container '
-      // style="background-image: url('/images/intro.jpg')"
-      // style={{ backgroundImage: 'url(`/images/intro.jpg`)' }}
+      className='bg-contain bg-no-repeat bg-center '
+      style={{
+        backgroundImage: 'url("/images/intro.jpg")',
+        width: '100%',
+        height: '100vh',
+      }}
     >
-      <img className=' bg-cover bg-center' src='/images/intro.jpg' />
+      {/* <img className=' bg-cover bg-center' src='/images/intro.jpg' /> */}
+      <div>
+        <button>버튼1</button>
+        <button>버튼2</button>
+      </div>
     </div>
   );
 };
