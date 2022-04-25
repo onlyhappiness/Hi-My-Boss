@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Button from '@material-ui/core/Button';
-// import Stack from '@material-ui/core/Stack';
+
+// import { app } from 'electron';
 
 const { remote } = require('electron');
 
@@ -33,7 +34,8 @@ const Home = () => {
               marginTop: '20px',
             }}
             onClick={() => {
-              remote.getCurrentWindow().close();
+              console.log('app------', remote);
+              // app.quit();
             }}
           >
             QUIT
