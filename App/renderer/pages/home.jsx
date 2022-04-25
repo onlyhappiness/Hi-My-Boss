@@ -1,52 +1,77 @@
 // import React from 'react';
 // import Head from 'next/head';
-// import Link from 'next/link';
+// import {
+//   makeStyles,
+//   createStyles,
+// } from "@material-ui/core/styles";
+// import Button from '@material-ui/core/Button';
+// import Dialog from '@material-ui/core/Dialog';
+// import DialogTitle from '@material-ui/core/DialogTitle';
+// import DialogContent from '@material-ui/core/DialogContent';
+// import DialogContentText from '@material-ui/core/DialogContentText';
+// import DialogActions from '@material-ui/core/DialogActions';
+// import Typography from '@material-ui/core/Typography';
+// import Link from '../components/Link';
+
+// const useStyles = makeStyles((theme) =>
+//   createStyles({
+//     root: {
+//       textAlign: 'center',
+//       paddingTop: theme.spacing(4),
+//     },
+//   })
+// );
 
 // function Home() {
+//   const classes = useStyles({});
+//   const [open, setOpen] = React.useState(false);
+//   const handleClose = () => setOpen(false);
+//   const handleClick = () => setOpen(true);
+
 //   return (
 //     <React.Fragment>
 //       <Head>
-//         <title>Home - Nextron (with-javascript-tailwindcss)</title>
+//         <title>Home - Nextron (with-javascript-material-ui)</title>
 //       </Head>
-//       <div className='grid grid-col-1 text-2xl w-full text-center'>
-//         <img className='ml-auto mr-auto' src='/images/logo.png' />
-//         <span>⚡ Electron ⚡</span>
-//         <span>+</span>
-//         <span>Next.js</span>
-//         <span>+</span>
-//         <span>tailwindcss</span>
-//         <span>=</span>
-//         <span>💕 </span>
-//       </div>
-//       <div className='mt-1 w-full flex-wrap flex justify-center'>
-//         <Link href='/next'>
-//           <a className='btn-blue'>Go to next page</a>
-//         </Link>
+//       <div className={classes.root}>
+//         <Dialog open={open} onClose={handleClose}>
+//           <DialogTitle>Super Secret Password</DialogTitle>
+//           <DialogContent>
+//             <DialogContentText>1-2-3-4-5</DialogContentText>
+//           </DialogContent>
+//           <DialogActions>
+//             <Button color="primary" onClick={handleClose}>
+//               OK
+//             </Button>
+//           </DialogActions>
+//         </Dialog>
+//         <Typography variant="h4" gutterBottom>
+//           Material-UI
+//         </Typography>
+//         <Typography variant="subtitle1" gutterBottom>
+//           with Nextron
+//         </Typography>
+//         <img src="/images/logo.png" />
+//         <Typography gutterBottom>
+//           <Link href="/next">Go to the next page</Link>
+//         </Typography>
+//         <Button variant="contained" color="secondary" onClick={handleClick}>
+//           Super Secret Password
+//         </Button>
 //       </div>
 //     </React.Fragment>
 //   );
-// }
+// };
 
 // export default Home;
 
-// import '../styles/home.module.css';
+import styles from "../styles/Home.module.css";
 
 const Home = () => {
   return (
-    <div
-      className='bg-contain bg-no-repeat bg-center '
-      style={{
-        backgroundImage: 'url("/images/intro.jpg")',
-        width: '100%',
-        height: '100vh',
-      }}
-    >
-      {/* <img className=' bg-cover bg-center' src='/images/intro.jpg' /> */}
-      <div>
-        <button>버튼1</button>
-        <button>버튼2</button>
-      </div>
-    </div>
+    <>
+      <div className={styles.container}></div>
+    </>
   );
 };
 

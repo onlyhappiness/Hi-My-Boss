@@ -1,3 +1,8 @@
-.intro {
-  background-image: url('../public/images/intro.jpg');
+.container {
+  background-image: url('https://i.pinimg.com/564x/ac/b2/5f/acb25f02ef3b0ac932f672681adac907.jpg');
+  width: 100%;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
