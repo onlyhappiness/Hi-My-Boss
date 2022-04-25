@@ -1,76 +1,45 @@
-// import React from 'react';
-// import Head from 'next/head';
-// import {
-//   makeStyles,
-//   createStyles,
-// } from "@material-ui/core/styles";
-// import Button from '@material-ui/core/Button';
-// import Dialog from '@material-ui/core/Dialog';
-// import DialogTitle from '@material-ui/core/DialogTitle';
-// import DialogContent from '@material-ui/core/DialogContent';
-// import DialogContentText from '@material-ui/core/DialogContentText';
-// import DialogActions from '@material-ui/core/DialogActions';
-// import Typography from '@material-ui/core/Typography';
-// import Link from '../components/Link';
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import Button from '@material-ui/core/Button';
+// import Stack from '@material-ui/core/Stack';
 
-// const useStyles = makeStyles((theme) =>
-//   createStyles({
-//     root: {
-//       textAlign: 'center',
-//       paddingTop: theme.spacing(4),
-//     },
-//   })
-// );
-
-// function Home() {
-//   const classes = useStyles({});
-//   const [open, setOpen] = React.useState(false);
-//   const handleClose = () => setOpen(false);
-//   const handleClick = () => setOpen(true);
-
-//   return (
-//     <React.Fragment>
-//       <Head>
-//         <title>Home - Nextron (with-javascript-material-ui)</title>
-//       </Head>
-//       <div className={classes.root}>
-//         <Dialog open={open} onClose={handleClose}>
-//           <DialogTitle>Super Secret Password</DialogTitle>
-//           <DialogContent>
-//             <DialogContentText>1-2-3-4-5</DialogContentText>
-//           </DialogContent>
-//           <DialogActions>
-//             <Button color="primary" onClick={handleClose}>
-//               OK
-//             </Button>
-//           </DialogActions>
-//         </Dialog>
-//         <Typography variant="h4" gutterBottom>
-//           Material-UI
-//         </Typography>
-//         <Typography variant="subtitle1" gutterBottom>
-//           with Nextron
-//         </Typography>
-//         <img src="/images/logo.png" />
-//         <Typography gutterBottom>
-//           <Link href="/next">Go to the next page</Link>
-//         </Typography>
-//         <Button variant="contained" color="secondary" onClick={handleClick}>
-//           Super Secret Password
-//         </Button>
-//       </div>
-//     </React.Fragment>
-//   );
-// };
-
-// export default Home;
-
-import styles from "../styles/Home.module.css";
+const { remote } = require('electron');
 
 const Home = () => {
   return (
     <>
-      <div className={styles.container}></div>
+      <Head>
+        <title>Hi My Boss</title>
+      </Head>
+      <div className={styles.container}>
+        <div className={styles.inner}>
+          <Button
+            variant='contained'
+            size='large'
+            style={{
+              backgroundColor: '#2F4858',
+              color: 'white',
+            }}
+          >
+            START
+          </Button>
+
+          <Button
+            variant='contained'
+            size='large'
+            style={{
+              backgroundColor: '#2F4858',
+              color: 'white',
+              marginTop: '20px',
+            }}
+            onClick={() => {
+              remote.getCurrentWindow().close();
+            }}
+          >
+            QUIT
+          </Button>
+        </div>
+      </div>
     </>
   );
 };
