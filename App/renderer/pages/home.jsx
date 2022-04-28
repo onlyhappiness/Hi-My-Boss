@@ -1,12 +1,15 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Button from '@material-ui/core/Button';
+import { useRouter } from 'next/router'
 
 // import { app } from 'electron';
 
 const { remote } = require('electron');
 
 const Home = () => {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -20,6 +23,9 @@ const Home = () => {
             style={{
               backgroundColor: '#2F4858',
               color: 'white',
+            }}
+            onClick={() => {
+              router.push('/next')
             }}
           >
             START
